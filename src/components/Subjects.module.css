@@ -1,0 +1,27 @@
+.container{
+    margin: 10px;
+}
+
+.list{
+    text-decoration: none;
+    font-size: 22px;
+    font-family: monospace;
+    
+}
+
+.Btn{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: monospace;
+    background-color: #81828c;
+    color: black;
+    border: none;
+    border-radius: 8px;
+}
+
+.heading{
+    font-family: monospace;
+    font-size: 22px;
+}

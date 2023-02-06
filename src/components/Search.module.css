@@ -1,0 +1,91 @@
+.container{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 24px;
+    padding-left: 24px;
+    
+}
+
+.paginationBttns {
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .paginationBttns a {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 1px solid #2b2eff;
+    color: #2b2eff;
+    cursor: pointer;
+  }
+  
+.paginationBttns a:hover {
+    color: white;
+    background-color: #2b2eff;
+  }
+  
+  .paginationActive a {
+    color: white;
+    background-color: #2b2eff;
+  }
+  
+  .paginationDisabled a {
+    color: grey;
+    background-color: grey;
+}
+
+.table{
+    padding-left: 24px;
+    /* border: 2px solid black; */
+    margin-top: 12px;
+    margin-bottom: 30px;
+}
+
+.head{
+    padding: 18px;
+    border: 2px solid black;
+    border-right: none;
+}
+
+
+.Btn{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: monospace;
+    background-color: #81828c;
+    color: black;
+    border: none;
+    border-radius: 8px;
+}
+
+.input{
+    height: 32px;
+    width: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
+    color: black;
+    background: white;
+    border-radius: 8px;
+}
+
+.bg{
+    border: 1px solid black;
+}
+
+.heading{
+    margin-left: 24px;
+    font-size: 42px;
+}
+
+.list{
+    text-decoration: none;
+    font-size: 14px;
+    font-family: monospace;
+}
