@@ -7,6 +7,7 @@ import Root from "./pages/Root";
 
 import SearchPage from "./pages/SearchPage";
 import ErrorPage from "./pages/ErrorPage";
+import Error from "./pages/Error";
 
 const router = createBrowserRouter([
   {
@@ -21,18 +22,22 @@ const router = createBrowserRouter([
       {
         path: "Javascript",
         element: <Javascript />,
+        errorElement: <Error />,
       },
       {
         path: "IndianHistory",
         element: <IndianHistory />,
+        errorElement: <Error />,
       },
       {
         path: "HarryPotter",
         element: <HarryPotter />,
+        errorElement: <Error />,
       },
       {
         path: "Crypto",
         element: <Crypto />,
+        errorElement: <Error />,
       },
     ],
   },

@@ -1,4 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 const Error = () => {
+  const navigate = useNavigate();
+  const backHandler = () => {
+    navigate("..");
+  };
   return (
     <div>
       <p
@@ -10,6 +16,7 @@ const Error = () => {
       >
         Something went wrong...
       </p>
+      <button onClick={backHandler}>Back</button>
     </div>
   );
 };

@@ -1,7 +1,9 @@
 import { Fragment, useState } from "react";
 import styles from "./Search.module.css";
+import CircularProgress from "@mui/material/CircularProgress";
 
 import ReactPaginate from "react-paginate";
+import { LinearProgress } from "@mui/material";
 
 const Search = () => {
   const [apiData, setApiData] = useState([]);
@@ -11,6 +13,7 @@ const Search = () => {
   //states for pages...
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(10);
+  const [error, setError] = useState("");
 
   const fetchHanlder = async () => {
     setIsLoding(true);
@@ -24,7 +27,17 @@ const Search = () => {
     console.log(data.docs);
     setApiData(data.docs);
     setIsLoding(false);
+
+    if (search.trim() === "") {
+      setError("no data to fetch");
+    }
   };
+
+  let isdisabled = false;
+
+  if (search.trim() === "") {
+    isdisabled = true;
+  }
 
   const clearHandler = () => {
     setSearch("");
@@ -41,6 +54,8 @@ const Search = () => {
     setCurrentPage(selected);
   };
 
+  //search check
+
   return (
     <Fragment>
       <div className={styles.container}>
@@ -54,7 +69,11 @@ const Search = () => {
           />
         </div>
         <div>
-          <button onClick={fetchHanlder} className={styles.Btn}>
+          <button
+            onClick={fetchHanlder}
+            className={styles.Btn}
+            disabled={isdisabled}
+          >
             Search
           </button>
         </div>
@@ -64,16 +83,15 @@ const Search = () => {
           </button>
         </div>
       </div>
+      {search.trim() !== "" ? (
+        ""
+      ) : (
+        <h1 style={{ marginLeft: "22px" }}>Add a book name to search</h1>
+      )}
       {isLoading && (
-        <p
-          style={{
-            textAlign: "center",
-            fontSize: "34px",
-            fontFamily: "monospace",
-          }}
-        >
-          Data is Loading...
-        </p>
+        <div style={{ marginLeft: "22px", marginTop: "2rem" }}>
+          <CircularProgress />{" "}
+        </div>
       )}
       <table className={styles.table}>
         <thead>
